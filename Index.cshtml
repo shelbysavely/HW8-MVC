@@ -1,0 +1,197 @@
+﻿@model IEnumerable<MVC10.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumCriticForReviews)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DirectorFacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor3FacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor2Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor1FacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gross)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor1Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumVotedUsers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastTotalFacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor3Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FacenumberInPoster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlotKeywords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieImdbLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumUserForReviews)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor2FacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImdbScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AspectRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieFacebookLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumCriticForReviews)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirectorFacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor3FacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor2Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor1FacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gross)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor1Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumVotedUsers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastTotalFacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor3Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FacenumberInPoster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlotKeywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieImdbLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumUserForReviews)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Budget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor2FacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImdbScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspectRatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieFacebookLikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director.DirectorName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

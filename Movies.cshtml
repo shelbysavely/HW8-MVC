@@ -1,0 +1,129 @@
+﻿@model IEnumerable<MVC10.Models.Movie>
+
+@{
+    ViewBag.Title = $"Top {Model.Count()} Movies by Gross";
+    int rank = 1;
+}
+
+<h1>Top @Model.Count() Movies</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Rank
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Gross)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genres)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTitle)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleYear)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.ImdbScore)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @rank
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            
+            <td>
+                @if (item.Gross.HasValue)
+                {
+                    @item.Gross.Value.ToString("C");
+                        
+                }
+                else
+                {
+                   <text>
+                        $0.00
+                   </text>
+                }
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genres)
+            </td>
+           
+            <td>
+                    <a href="@item.MovieImdbLink"> @Html.DisplayFor(modelItem => item.MovieTitle)</a>
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            
+            <td>
+                    @if (item.Budget.HasValue)
+                    {
+                        @item.Budget.Value.ToString("C")
+                        ;
+
+                    }
+                    else
+                    {
+                        <text>
+                            $0.00
+                        </text>
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleYear)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ImdbScore)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Director.DirectorName)
+            </td>
+            
+        </tr>
+
+        rank++;
+
+}
+    </tbody>
+</table>

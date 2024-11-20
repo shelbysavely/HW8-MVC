@@ -1,0 +1,21 @@
+﻿@model MVC10.Models.Director
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Info</h1>
+<h2>@Model.DirectorName</h2>
+
+
+<p>
+    Movies direct include:
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>
+                <a href="@movie.MovieImdbLink">@movie.MovieTitle that came out in @movie.TitleYear</a>
+            </li>
+        }
+    </ul>
+</p>
